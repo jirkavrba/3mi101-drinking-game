@@ -13,8 +13,9 @@ defmodule DrinkingGame.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: DrinkingGame.PubSub},
       # Start the Endpoint (http/https)
-      DrinkingGameWeb.Endpoint
+      DrinkingGameWeb.Endpoint,
       # Start a worker by calling: DrinkingGame.Worker.start_link(arg)
+      DrinkingGame.Presence
       # {DrinkingGame.Worker, arg}
     ]
 
