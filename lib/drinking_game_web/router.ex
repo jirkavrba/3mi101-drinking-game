@@ -18,7 +18,11 @@ defmodule DrinkingGameWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
     live "/game", GameLive, :index
+
+    get  "/game/settings", GameSettingsController, :index
+    post "/game/settings", GameSettingsController, :save
   end
 
   # Other scopes may use custom stacks.
