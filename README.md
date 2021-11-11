@@ -2,4 +2,4 @@
 
 ## 3mi101 Drinking game
 
-![Chad Adámek](./priv/images/adamek.png)
+![Chad Adámek](./priv/static/images/adamek.png)
