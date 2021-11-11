@@ -6,6 +6,7 @@ defmodule DrinkingGame.Application do
   use Application
 
   @impl true
+  @spec start(any, any) :: {:error, any} | {:ok, pid}
   def start(_type, _args) do
     children = [
       # Start the Telemetry supervisor
