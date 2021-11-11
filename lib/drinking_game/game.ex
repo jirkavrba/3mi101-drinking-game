@@ -6,8 +6,6 @@ defmodule DrinkingGame.Game do
     last_incremented_at: DateTime.t(),
   }
 
-  @enforce_keys [:playing, :counter, :increments_per_cup, :last_incremented_at, :cooldown]
-
   defstruct [
     playing: false,
     counter: 0,

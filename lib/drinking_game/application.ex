@@ -15,9 +15,8 @@ defmodule DrinkingGame.Application do
       {Phoenix.PubSub, name: DrinkingGame.PubSub},
       # Start the Endpoint (http/https)
       DrinkingGameWeb.Endpoint,
-      # Start a worker by calling: DrinkingGame.Worker.start_link(arg)
-      DrinkingGame.Presence
-      # {DrinkingGame.Worker, arg}
+      DrinkingGame.Presence,
+      DrinkingGame.GameServer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
