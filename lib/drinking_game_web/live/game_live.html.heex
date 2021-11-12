@@ -11,9 +11,10 @@
             <div class="h-32 border-l-2 mx-20 border-gray-100"></div>
 
             <%= if @cup_available do %>
-                <div class="animate-pulse cursor-pointer translate transform hover:opacity-80" phx-click="drink_cup">
+                <div class="animate-pulse cursor-pointer translate transform hover:opacity-80 text-center" phx-click="drink_cup">
                     <div class="w-32 h-48 bg-gray-300 relative shadow-2xl" style="transform: perspective(300px) rotateX(-30deg)">
                         <div class="bg-gradient-to-b from-yellow-500 to-yellow-400 w-full h-full"></div>
+                        <h1 class="absolute top-1/4 left-0 w-full text-center text-yellow-600 font-black text-xl mt-5">Pijeme!</h1>
                     </div>
                 </div>
             <% else %>
