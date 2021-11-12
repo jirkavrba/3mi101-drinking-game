@@ -19,4 +19,10 @@
         <% end %>
 
     </div>
+
+    <%= if @current_state.playing do %>
+        <div class="mt-10">
+            <a href={Routes.game_settings_path(@conn, :stop)} class=" rounded-lg px-5 py-2 bg-gradient-to-br from-red-500 to-red-700 font-black text-white">Ukončit hru</a>
+        </div>
+    <% end %>
 </div>
