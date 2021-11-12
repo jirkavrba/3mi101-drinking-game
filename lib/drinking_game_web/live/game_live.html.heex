@@ -4,6 +4,12 @@
             <%= @game.counter %><span class="text-gray-300">&times;</span>
         </h1>
 
+        Next cup: <%= rem(@game.counter, @game.increments_per_cup) %> / <%= @game.increments_per_cup %>
+
+        <%= if @cup_available do %>
+            <div phx-click="drink_cup">New cup available</div>
+        <% end %>
+
         <div class="mt-12">
             <button class="text-white font-black bg-gradient-to-br from-green-500 to-blue-500 px-10 py-5 rounded-xl text-2xl" phx-click="increment">Kolegové, prosímvás!</button>
         </div>
