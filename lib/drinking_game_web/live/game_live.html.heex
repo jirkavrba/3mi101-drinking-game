@@ -1,6 +1,10 @@
 <div class="text-center mt-20">
     <%= if @game.playing do %>
     <% else %>
-        <h1 class="text-gray-200 font-black text-5xl">Hra momentálně není spuštěna</h1>
+        <h1 class="text-gray-400 font-black text-5xl mb-10">Hra momentálně není spuštěna</h1>
+
+        <a href={Routes.game_settings_path(@socket, :start)}
+           class="px-5 py-2 bg-gradient-to-br from-green-500 to-green-600 shadow text-white text-xl font-black rounded-lg cursor-pointer transition hover:from-green-400 hover:to-green-500 hover:shadow-lg"
+        >Start</a>
     <% end %>
 </div>
