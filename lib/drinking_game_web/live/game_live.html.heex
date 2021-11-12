@@ -1,17 +1,30 @@
 <div class="text-center mt-20">
     <%= if @game.playing do %>
-        <h1 class="text-8xl text-gray-400 font-black">
-            <%= @game.counter %><span class="text-gray-300">&times;</span>
-        </h1>
+        <div class="flex flex-row items-center justify-center">
+            <div class="flex flex-row items-center">
+                <h1 class="text-8xl text-black font-black">
+                    <%= @game.counter %><span class="text-gray-600">&times;</span>
+                </h1>
+                <img class="ml-5 transition w-48 h-48 rounded-full" src={DrinkingGameWeb.Endpoint.static_path("/images/adamek.png")}>
+            </div>
 
-        Next cup: <%= rem(@game.counter, @game.increments_per_cup) %> / <%= @game.increments_per_cup %>
+            <div class="h-32 border-l-2 mx-20 border-gray-100"></div>
 
-        <%= if @cup_available do %>
-            <div phx-click="drink_cup">New cup available</div>
-        <% end %>
+            <%= if @cup_available do %>
+                <div class="animate-pulse cursor-pointer translate transform hover:opacity-80" phx-click="drink_cup">
+                    <div class="w-32 h-48 bg-gray-300 relative shadow-2xl" style="transform: perspective(300px) rotateX(-30deg)">
+                        <div class="bg-gradient-to-b from-yellow-500 to-yellow-400 w-full h-full"></div>
+                    </div>
+                </div>
+            <% else %>
+                <div class="w-32 h-48 bg-gray-200 relative" style="transform: perspective(300px) rotateX(-30deg)">
+                    <div class="absolute bg-gray-400 w-full bottom-0" style={"height: #{ rem(@game.counter, @game.increments_per_cup) / @game.increments_per_cup * 100 }%"}></div>
+                </div>
+            <% end %>
+        </div>
 
         <div class="mt-12">
-            <button class="text-white font-black bg-gradient-to-br from-green-500 to-blue-500 px-10 py-5 rounded-xl text-2xl" phx-click="increment">Kolegové, prosímvás!</button>
+            <button class="text-white font-black bg-gradient-to-br from-green-500 to-blue-500 px-10 py-5 rounded-xl text-2xl transition hover:shadow-xl hover:from-green-400 to-blue-400" phx-click="increment">Kolegové, prosímvás!</button>
         </div>
     <% else %>
         <h1 class="text-gray-400 font-black text-5xl mb-10">Hra momentálně není spuštěna</h1>

@@ -12,7 +12,7 @@ defmodule DrinkingGameWeb.GameLive do
   end
 
   def handle_info({:game_updated, game}, socket) do
-    new_cup_available = rem(game.counter, game.increments_per_cup) == 0
+    new_cup_available = rem(game.counter, game.increments_per_cup) == 0 and game.counter != 0
 
     socket = socket
     |> assign(:game, game)
