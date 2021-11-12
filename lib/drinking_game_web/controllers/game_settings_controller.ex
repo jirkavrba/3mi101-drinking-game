@@ -18,6 +18,16 @@ defmodule DrinkingGameWeb.GameSettingsController do
     end
   end
 
+  def start(conn, _params) do
+    GameServer.start_game()
+    redirect conn, to: Routes.game_path(conn, :index)
+  end
+
+  def stop(conn, _params) do
+    GameServer.stop_game()
+    redirect conn, to: Routes.game_path(conn, :index)
+  end
+
   defp validate_save_params(params) do
     with {increments_per_cup, _} <- Integer.parse(params["increments_per_cup"]),
          {cooldown, _} <- Integer.parse(params["cooldown"]) do

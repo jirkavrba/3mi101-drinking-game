@@ -21,8 +21,11 @@ defmodule DrinkingGameWeb.Router do
 
     live "/game", GameLive, :index
 
-    get  "/game/settings", GameSettingsController, :index
+    get "/game/settings", GameSettingsController, :index
     post "/game/settings", GameSettingsController, :save
+
+    get "/game/start", GameSettingsController, :start
+    get "/game/stop", GameSettingsController, :stop
   end
 
   # Other scopes may use custom stacks.
