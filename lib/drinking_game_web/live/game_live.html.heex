@@ -1,5 +1,12 @@
 <div class="text-center mt-20">
     <%= if @game.playing do %>
+        <h1 class="text-8xl text-gray-400 font-black">
+            <%= @game.counter %><span class="text-gray-300">&times;</span>
+        </h1>
+
+        <div class="mt-12">
+            <button class="text-white font-black bg-gradient-to-br from-green-500 to-blue-500 px-10 py-5 rounded-xl text-2xl" phx-click="increment">Kolegové, prosímvás!</button>
+        </div>
     <% else %>
         <h1 class="text-gray-400 font-black text-5xl mb-10">Hra momentálně není spuštěna</h1>
 

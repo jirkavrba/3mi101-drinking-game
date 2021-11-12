@@ -11,6 +11,6 @@ defmodule DrinkingGame.Game do
     counter: 0,
     increments_per_cup: 5,
     last_incremented_at: DateTime.from_unix(0),
-    cooldown: 5 * 1000 # 5 seconds
+    cooldown: 5 # 5 seconds
   ]
 end
